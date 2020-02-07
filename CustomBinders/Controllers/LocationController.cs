@@ -6,7 +6,7 @@ namespace CustomBinders.Controllers
     public class LocationController : Controller
     {
         [Route("api/location")]
-        public IActionResult Index(Point point)
+        public IActionResult CreatePoint(Point point)
         {
             return Json(point);
         }

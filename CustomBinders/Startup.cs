@@ -18,9 +18,10 @@ namespace CustomBinders
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews(opts =>
+            services.AddControllers(opts =>
             {
                 opts.ModelBinderProviders.Insert(0, new PointBinderProvider());
+                opts.ModelBinderProviders.Insert(1, new PersonIdBinderProvider());
             });
         }
 
@@ -32,7 +33,6 @@ namespace CustomBinders
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
                 app.UseHsts();
             }
             app.UseHttpsRedirection();
@@ -46,7 +46,10 @@ namespace CustomBinders
             {
                 endpoints.MapControllerRoute(
                     name: "location",
-                    pattern: "{controller=Location}/{action=Index}");
+                    pattern: "{controller=Location}/{action=CreatePoint}");
+                endpoints.MapControllerRoute(
+                    name: "person",
+                    pattern: "{controller=Person}/{action=GetPersonByID}/{id}");
             });
         }
     }
