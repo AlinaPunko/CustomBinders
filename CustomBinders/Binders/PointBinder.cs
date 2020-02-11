@@ -14,11 +14,11 @@ namespace CustomBinders.Binders
                 throw new ArgumentNullException(nameof(bindingContext));
             }
 
-            var coordinatesArray = bindingContext.ValueProvider.GetValue("coord").FirstValue.Split(",");
+            string[] coordinatesArray = bindingContext.ValueProvider.GetValue("coord").FirstValue.Split(",");
 
-            if (!int.TryParse(coordinatesArray[0], out var xCoordinate) ||
-                !int.TryParse(coordinatesArray[1], out var yCoordinate) ||
-                !int.TryParse(coordinatesArray[2], out var zCoordinate))
+            if (!int.TryParse(coordinatesArray[0], out int xCoordinate) ||
+                !int.TryParse(coordinatesArray[1], out int yCoordinate) ||
+                !int.TryParse(coordinatesArray[2], out int zCoordinate))
             {
                 return null;
             }

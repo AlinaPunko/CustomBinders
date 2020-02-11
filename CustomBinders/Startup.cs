@@ -44,12 +44,8 @@ namespace CustomBinders
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
-                    name: "location",
-                    pattern: "{controller=Location}/{action=CreatePoint}");
-                endpoints.MapControllerRoute(
-                    name: "person",
-                    pattern: "{controller=Person}/{action=GetPersonByID}/{id}");
+                endpoints.MapControllerRoute("location", "{controller=Location}/{action=CreatePoint}");
+                endpoints.MapControllerRoute("person", "{controller=Person}/{action=GetPersonByID}/{id}");
             });
         }
     }
