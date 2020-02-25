@@ -1,11 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 
 namespace CustomBinders
 {
@@ -22,5 +16,6 @@ namespace CustomBinders
                 {
                     webBuilder.UseStartup<Startup>();
                 });
+        //use M2VkN2Q1OGUtNTQxOC00MzhkLWJjMzYtMzQzODBhYWFhMWE1
     }
 }

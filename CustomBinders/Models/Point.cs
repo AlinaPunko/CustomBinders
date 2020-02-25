@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace CustomBinders.Models
+﻿namespace CustomBinders.Models
 {
     public class Point
     {
